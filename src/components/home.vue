@@ -12,29 +12,40 @@
       </div>
     </div>
     <b-card-group columns>
-      <b-card v-for='p in people'
-        :key='p.name'
-        :title='p.name'
-        :img-src='`static/people/${p.image}`'
-        img-fluidz
-        img-alt="image"
-        img-top
-        class="jcard">
-          <p class="card-text">
-            {{ p.bio }}
-          </p>
-          <a :href="p.website" class="bio">
-            <p class="text-center">
-              <span class="btn btn-primary">Website</span>
+        <div class="jcard card" v-for="p in people" :key="p.name">
+          <div class="img-container">
+            <img class="card-img-top" :src="`static/people/${p.image}`">
+            <div class="motm-badge" v-if="p.motm">Member of the Month - {{ p.motm }}</div>
+          </div>
+          <div class="card-body" :class="{motm : !p.motm}">
+            <h4 class="card-title">
+              {{ p.name }}
+            </h4>
+            <p class="card-text">
+              {{ p.bio }}
             </p>
-          </a>
-        </b-card>
+            <a :href="p.website" class="bio">
+              <p class="text-center">
+                <span class="btn btn-primary">Website</span>
+              </p>
+            </a>
+          </div>
+        </div>
     </b-card-group>
   </b-container>
 </template>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Roboto:900");
+
+.motm-badge {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 2px 5px;
+  width: 100%;
+  position: relative;
+  bottom: 28px;
+}
 .btn-outline-primary:hover, .btn-outline-primary:not([disabled]):not(.disabled):active, .btn-outline-primary:not([disabled]):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle {
   background-color: white;
   border-color: black;
@@ -119,6 +130,12 @@ h1 {
 } */
 .card-title {
   margin-bottom: 0px;
+}
+.card-body {
+  margin-top: -28px;
+}
+.motm {
+  margin-top: 0px;
 }
 p {
   margin-bottom: 0px;
@@ -211,13 +228,15 @@ export default {
           name: 'Jamie Cheu',
           bio: 'Along with her outreach co-chair Sam, Jamie organized the first Engineering R\'Future, an event catered to help high school women choose what engineering discipline they would like to pursue in college. Jamie is such a dedicated individual who loves outreach for engineering and her hard work has reached many young students in the IE.',
           website: '#',
-          image: 'jamie.jpg'
+          image: 'jamie.jpg',
+          motm: 'October 2017'
         },
         {
           name: 'Sam Vu',
           bio: 'She is one of the co-outreach chairs for SWE, and this month she organized the first ever, Engineering R\'Future, along with her co-chair, Jamie. This event successfully taught high school women about the different engineering fields in order to prepare them for the next step in their lives. Sam is one of the sweetest people I know and she always shows up with a smile on her face.',
           website: '#',
-          image: 'samvu.jpg'
+          image: 'samvu.jpg',
+          motm: 'October 2017'
         },
         {
           name: 'Pauleen Banzuela',
@@ -235,7 +254,8 @@ export default {
           name: 'Anthony Castellanos',
           bio: 'Through the hard work and dedication that has been put into planning events as Outreach Director, Anthony continuously demonstrates the passion he has for outreach in our community in what he does. In carrying out the mission of SHPE to empower Hispanic communities to enter STEM fields, he takes every opportunity that arises in order to push forward towards that objective. By heading Dia de Ciencias, assisting in Noche de Ciencias, and having planned several outreach and tabling events at high schools thus far, Anthony leads by example by pushing himself to meet and exceed the expectations of being outreach director. Through his strong leadership skills, he has been able to establish and maintain a reliable and hardworking committee, through which all have greatly contributed to the success of outreach in our organization.',
           website: '#',
-          image: 'anthony.jpg'
+          image: 'anthony.jpg',
+          motm: 'October 2017'
         },
         {
           name: 'Steven Espinoza',
