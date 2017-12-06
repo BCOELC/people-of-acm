@@ -1,13 +1,13 @@
 <template>
   <b-container class="h-100 mt-5">
     <div class="text-center header row">
-      <div class="col-md-1">
+      <div class="col-lg-2 col-md-3 optional text-left">
         <button @click="scroll(isScrolling); isScrolling = !isScrolling" class="scroll-toggle btn btn-sm btn-outline-primary">Turn On Scroll</button>
       </div>
-      <div class="col-md-7">
+      <div class="col-lg-7 col-md-12 col-sm-12 text-center">
         <h1>PEOPLE OF BCOE</h1>
       </div>
-      <div class="col-md-2 signinlink">
+      <div class="col-lg-3 col-md-4 signinlink optional text-right">
         <a href="http://acmucr.org/">Made with <span style="color:red;">❤️</span> by ACM</a>
       </div>
     </div>
@@ -37,7 +37,11 @@
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Roboto:900");
-
+@media (max-width: 900px) {
+  .optional {
+    display: none;
+  }
+}
 .motm-badge {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
