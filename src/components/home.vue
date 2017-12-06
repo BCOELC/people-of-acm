@@ -219,10 +219,11 @@ export default {
       isScrolling: false,
       people: [
         {
-          name: 'Pam Ycu',
-          bio: 'Not only has Pam been working hard on her ME projects and volunteering for outreach events, she also organized a JPL tour for SWE and other interested engineers! She\'s always hustling through whatever life throws at her and her motivation is inspiring.',
+          name: 'Melissa Do',
+          bio: '"She\'s absolutely on top of everything. As secretary of IEEE, she goes above and over. Not only is she constantly creating new flyers for IEEE and sending out emails, she plans and hosts the EE010 workshop for incoming freshmen. She teaches freshmen basics of electrical engineering to get them interested early on.',
           website: '#',
-          image: 'pam.jpg'
+          image: 'melissa.jpg',
+          motm: 'October 2017'
         },
         {
           name: 'Jamie Cheu',
@@ -237,6 +238,12 @@ export default {
           website: '#',
           image: 'samvu.jpg',
           motm: 'October 2017'
+        },
+        {
+          name: 'Pam Ycu',
+          bio: 'Not only has Pam been working hard on her ME projects and volunteering for outreach events, she also organized a JPL tour for SWE and other interested engineers! She\'s always hustling through whatever life throws at her and her motivation is inspiring.',
+          website: '#',
+          image: 'pam.jpg'
         },
         {
           name: 'Pauleen Banzuela',
