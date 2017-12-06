@@ -24,7 +24,7 @@
             <p class="card-text">
               {{ p.bio }}
             </p>
-            <a :href="p.website" class="bio">
+            <a v-if="p.website !== '#'" :href="p.website" class="bio">
               <p class="text-center">
                 <span class="btn btn-primary">Website</span>
               </p>
