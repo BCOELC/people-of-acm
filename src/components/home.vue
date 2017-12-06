@@ -5,10 +5,10 @@
         <button @click="scroll(isScrolling); isScrolling = !isScrolling" class="scroll-toggle btn btn-sm btn-outline-primary">Turn On Scroll</button>
       </div>
       <div class="col-md-7">
-        <h1>PEOPLE OF ACM</h1>
+        <h1>PEOPLE OF BCOE</h1>
       </div>
       <div class="col-md-2 signinlink">
-        <a href="http://acmucr.org/checkin">acmucr.org/checkin</a>
+        <a href="http://acmucr.org/">Made with <span style="color:red;">❤️</span> by ACM</a>
       </div>
     </div>
     <b-card-group columns>
@@ -201,6 +201,72 @@ export default {
     return {
       isScrolling: false,
       people: [
+        {
+          name: 'Pam Ycu',
+          bio: 'Not only has Pam been working hard on her ME projects and volunteering for outreach events, she also organized a JPL tour for SWE and other interested engineers! She\'s always hustling through whatever life throws at her and her motivation is inspiring.',
+          website: '#',
+          image: 'pam.jpg'
+        },
+        {
+          name: 'Jamie Cheu',
+          bio: 'Along with her outreach co-chair Sam, Jamie organized the first Engineering R\'Future, an event catered to help high school women choose what engineering discipline they would like to pursue in college. Jamie is such a dedicated individual who loves outreach for engineering and her hard work has reached many young students in the IE.',
+          website: '#',
+          image: 'jamie.jpg'
+        },
+        {
+          name: 'Sam Vu',
+          bio: 'She is one of the co-outreach chairs for SWE, and this month she organized the first ever, Engineering R\'Future, along with her co-chair, Jamie. This event successfully taught high school women about the different engineering fields in order to prepare them for the next step in their lives. Sam is one of the sweetest people I know and she always shows up with a smile on her face.',
+          website: '#',
+          image: 'samvu.jpg'
+        },
+        {
+          name: 'Pauleen Banzuela',
+          bio: 'Pauleen has just been a great engineer, friend, and leader! She takes pride in her work and has been able to manage school, club work, and her career search all while looking like a hottie! Pauleen, as SWE\'s Team Tech Lead, has been hauling ass to get company sponsorship for the team, create a Big Ideas project and submitting the pre-proposal, and start UCR\'s first bioengineering hackathon! What can\'t she do honestly! She has been showcasing leadership while remaining positive and creating a great environment for everyone that\'s interested in joining her work. She has so many big ideas and through planned implementation, not only is she bringing UCR to the front stage among other colleges, she also promotes women in engineering to work hard and shine through! She is a great role model for other engineers and she is what I aspire to be!',
+          website: '#',
+          image: 'pauleen.jpg'
+        },
+        {
+          name: 'Crysthal Alvarez',
+          bio: 'Crysthal is a STEM transfer student mentor for Ms. Ruiz, aside from being an officer on the board for Window to the Brain Undergradupuate Research Club. Crysthal is a Mechanical Engineering major, and also does research under Dr. Aguilar\'s lab, working with bacteria on nano-ceramic materials. Crysthal\'s dedication to the club has helped the club grow, especially since she was part of the founding board that started the club.',
+          website: '#',
+          image: 'crysthal.jpg'
+        },
+        {
+          name: 'Anthony Castellanos',
+          bio: 'Through the hard work and dedication that has been put into planning events as Outreach Director, Anthony continuously demonstrates the passion he has for outreach in our community in what he does. In carrying out the mission of SHPE to empower Hispanic communities to enter STEM fields, he takes every opportunity that arises in order to push forward towards that objective. By heading Dia de Ciencias, assisting in Noche de Ciencias, and having planned several outreach and tabling events at high schools thus far, Anthony leads by example by pushing himself to meet and exceed the expectations of being outreach director. Through his strong leadership skills, he has been able to establish and maintain a reliable and hardworking committee, through which all have greatly contributed to the success of outreach in our organization.',
+          website: '#',
+          image: 'anthony.jpg'
+        },
+        {
+          name: 'Steven Espinoza',
+          bio: 'As a third year, he is doing well in his Mechanical Engineering classes, doing research, and has been playing a prominent role in his student organizations such as ASME and Theta Tau. He is a big personality with a big heart and wants to make everyone around him better.',
+          website: '#',
+          image: 'steven.jpg'
+        },
+        {
+          name: 'Kyle Kinne',
+          bio: 'Kyle, the president of SAE, has been working his butt off since freshman year and is still the hardest worker on the team. Building a formula style race car is not an easy task. Not only does Kyle posses leader ship skills, but his engineering and manufacturing skills are unmatched. Kyle is very deserving of this award for the month!',
+          website: '#',
+          image: 'kylek.jpg'
+        },
+        {
+          name: 'Andrew Sanchez',
+          bio: 'Constantly learning and teaching others about engineering concepts. Goes above and beyond to increase awareness of engineering and assist others in the pursit of knowledge.',
+          website: '#',
+          image: 'andrew.jpg'
+        },
+        {
+          name: 'Riya Sanghvi',
+          bio: 'Riya always has a cheerful and fun personality and even when she is under a lot of stress, she maintains a level-headed professional attitude. Last year, she served as academic chair she organized many successful events such as Research Networking Night. Now that she is serving professional development chair, I have no doubt that her personality will attract many personal and professional connections for SWE members. This month she has helped with organizing a trip to go to the SWE National Conference, already doubling the previous year\'s attendance numbers. It is exciting to see what she can do in a whole year. Engineer of the month? More like engineer of the year!',
+          website: '#',
+          image: 'riya.png'
+        },
+        {
+          name: 'Albert Fernandez',
+          bio: 'With all the changes in SHPE, Albert Zenon Fernandez has consistently stepped up to the plate, even when the event does not fall into his category. Within a week he organized the 1st General Meeting, Bourns Inc.\'s STEP Conference, and SpeedMentoring event. He is a support to the organization and a key part to this year\'s ongoing sucess.',
+          website: '#',
+          image: 'albert.jpg'
+        },
         {
           name: 'Kyle Minshall',
           bio: 'Hi! My name is Kyle Minshall. I am a second year Computer Science student at the University of California, Riverside. I have been programming for almost eight years across a wide variety of languages including PHP and Symfony, Ruby on Rails, Python, C++, Java, Swift, Objective-C, and JavaScript.',
