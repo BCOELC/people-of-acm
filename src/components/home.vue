@@ -1,38 +1,41 @@
 <template>
-  <b-container class="h-100 mt-5">
-    <div class="text-center jheader row">
+  <div>
+    <div class="jheader">
       <div class="scrollToggle text-left">
         <button @click="scroll(isScrolling); isScrolling = !isScrolling" class="scroll-toggle btn btn-sm btn-outline-primary">Turn On Scroll</button>
       </div>
-      <div class="col-md-12 text-center">
+      <div class="text-center">
         <h1>PEOPLE OF BCOE</h1>
       </div>
       <div class="signinlink text-right">
         <a href="http://acmucr.org/">Made with <span style="color:red;">❤️</span> by ACM</a>
       </div>
     </div>
-    <b-card-group columns>
-        <div class="jcard card" v-for="p in people" :key="p.name">
-          <div class="img-container">
-            <img class="card-img-top" :src="`static/people/${p.image}`">
-            <div class="motm-badge" v-if="p.motm">Member of the Month - {{ p.motm }}</div>
-          </div>
-          <div class="card-body" :class="{motm : !p.motm}">
-            <h4 class="card-title">
-              {{ p.name }}
-            </h4>
-            <p class="card-text">
-              {{ p.bio }}
-            </p>
-            <a v-if="p.website !== '#'" :href="p.website" class="bio">
-              <p class="text-center">
-                <span class="btn btn-primary">Website</span>
+
+    <b-container class="h-100 mt-5">
+      <b-card-group columns>
+          <div class="jcard card" v-for="p in people" :key="p.name">
+            <div class="img-container">
+              <img class="card-img-top" :src="`static/people/${p.image}`">
+              <div class="motm-badge" v-if="p.motm">Member of the Month - {{ p.motm }}</div>
+            </div>
+            <div class="card-body" :class="{motm : !p.motm}">
+              <h4 class="card-title">
+                {{ p.name }}
+              </h4>
+              <p class="card-text">
+                {{ p.bio }}
               </p>
-            </a>
+              <a v-if="p.website !== '#'" :href="p.website" class="bio">
+                <p class="text-center">
+                  <span class="btn btn-primary">Website</span>
+                </p>
+              </a>
+            </div>
           </div>
-        </div>
-    </b-card-group>
-  </b-container>
+      </b-card-group>
+    </b-container>
+  </div>
 </template>
 
 <style scoped>
@@ -72,7 +75,7 @@
 .signinlink {
   position: absolute;
   right: 20px;
-  margin-top: 13px;
+  top: 13px;
 }
 .signinlink a {
   color: black;
@@ -161,10 +164,10 @@ p {
 </style>
 
 <script>
-let fps = 100
-let speedFactor = 0.0005
+let fps = 60
+let speedFactor = 0.001
 let minDelta = 0.5
-let autoScrollSpeed = 10
+let autoScrollSpeed = 5
 let autoScrollTimer, restartTimer
 let isScrolling = false
 let prevPos = 0
