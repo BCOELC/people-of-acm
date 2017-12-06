@@ -1,13 +1,13 @@
 <template>
   <b-container class="h-100 mt-5">
-    <div class="text-center header row">
-      <div class="col-lg-2 col-md-3 optional text-left">
+    <div class="text-center jheader row">
+      <div class="scrollToggle text-left">
         <button @click="scroll(isScrolling); isScrolling = !isScrolling" class="scroll-toggle btn btn-sm btn-outline-primary">Turn On Scroll</button>
       </div>
-      <div class="col-lg-7 col-md-12 col-sm-12 text-center">
+      <div class="col-md-12 text-center">
         <h1>PEOPLE OF BCOE</h1>
       </div>
-      <div class="col-lg-3 col-md-4 signinlink optional text-right">
+      <div class="signinlink text-right">
         <a href="http://acmucr.org/">Made with <span style="color:red;">❤️</span> by ACM</a>
       </div>
     </div>
@@ -37,10 +37,19 @@
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Roboto:900");
-@media (max-width: 900px) {
-  .optional {
+@media (max-width: 985px) {
+  .signinlink {
     display: none;
   }
+  .scrollToggle {
+    display: none;
+  }
+}
+.scrollToggle {
+  position: absolute;
+  left: 20px;
+  margin-top: 10px;
+  z-index: 10;
 }
 .motm-badge {
   background-color: rgba(0, 0, 0, 0.5);
@@ -57,22 +66,22 @@
 }
 .scroll-toggle {
   position: relative;
-  margin-top: 8px;
   color: black;
   border: 1px black solid;
 }
 .signinlink {
-  position: relative;
+  position: absolute;
+  right: 20px;
   margin-top: 13px;
 }
 .signinlink a {
   color: black;
 }
-.header {
+.jheader {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.85);
 }
