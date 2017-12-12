@@ -16,7 +16,7 @@
       <b-card-group columns>
           <div class="jcard card" v-for="p in people" :key="p.name">
             <div class="img-container">
-              <img class="card-img-top" :src="`static/people/${p.image}`">
+              <img class="card-img-top" v-lazy="`static/people/${p.image}`">
               <div class="motm-badge" v-if="p.motm">Member of the Month - {{ p.motm }}</div>
             </div>
             <div class="card-body" :class="{motm : !p.motm}">
@@ -26,7 +26,7 @@
               <p class="card-text">
                 {{ p.bio }}
               </p>
-              <a v-if="p.website !== '#'" :href="p.website" class="bio">
+              <a v-if="p.website !== ''" :href="p.website" class="bio">
                 <p class="text-center">
                   <span class="btn btn-primary">Website</span>
                 </p>
@@ -235,79 +235,121 @@ export default {
       isScrolling: false,
       people: [
         {
+          name: 'Joel Gomez',
+          bio: 'Hey everyone! I’m Joel, a senior at UCR and this summer (2017), I was fortunate enough to land an internship with LinkedIn as a Site Reliability Engineer (SRE) Intern in the Sunnyvale area in Silicon Valley. For my intern project, I’m working on the backend of the People You May Know feature of LinkedIn.com.',
+          website: 'https://joelgomez.me/',
+          image: 'joel.jpg',
+          motm: ''
+        },
+        {
+          name: 'Elijah Marchese',
+          bio: 'Even though it\'s been less than a month, working at JPL has been pretty surreal. It\'s really cool to work at a company that pioneered space exploration. Just walking around the campus, there\'s tons of information and models of these missions all around JPL, so it\'s always nice to just stop and learn and see things throughout the workday. Other opportunities to learn are JPL\'s weekly talks, journal clubs, and classes offered for interns.',
+          website: '',
+          image: 'elijah.jpg',
+          motm: ''
+        },
+        {
+          name: 'Jessica Gonzalez',
+          bio: 'I just completed my second year at UCR as a CS student. I was fortunate enough this year to obtain a summer internship at NASA JPL. During the Fall quarter of 2016, I learned about a program called FIELDS at an ACM meeting. FIELDS is a program funded by JPL that helps UCR students get internships at UCR and/or JPL. When I heard about this program, I did not think I had the experience necessary or skills to qualify for an internship, so I was hesitant to apply.',
+          website: '',
+          image: 'jessica.jpg',
+          motm: ''
+        },
+        {
+          name: 'Samuel Hwang',
+          bio: 'My name is Samuel Hwang. I am a fourth year computer science major studying at UC Riverside. I am interested in the software development stack as a whole from the birth of an idea to the shipment of a product. My hobbies include traveling, cooking, exercising, and listening to podcasts.',
+          website: '',
+          image: 'sam.jpg',
+          motm: ''
+        },
+        {
+          name: 'Paul',
+          bio: 'I’m going into my 3rd year at UCR studying Electrical Engineering, and am going to be focusing on RF and communications. Outside of the classroom, I’ve kept busy by working on UCR SAE’s Electric Vehicle, hacking together (or apart…) some personal projects, and in my free time I love to get out camping whenever I get the chance.',
+          website: '',
+          image: 'paul.jpg',
+          motm: ''
+        },
+        {
+          name: 'Nishanth Babu',
+          bio: 'Nish is a 4th year CS major. He\'s active on campus with his involvement organizations such as ACM, Tau Beta Pi, and Theta Tau.',
+          website: '',
+          image: 'nish.jpg',
+          motm: ''
+        },
+        {
           name: 'Melissa Do',
           bio: '"She\'s absolutely on top of everything. As secretary of IEEE, she goes above and over. Not only is she constantly creating new flyers for IEEE and sending out emails, she plans and hosts the EE010 workshop for incoming freshmen. She teaches freshmen basics of electrical engineering to get them interested early on.',
-          website: '#',
+          website: '',
           image: 'melissa.jpg',
           motm: 'October 2017'
         },
         {
           name: 'Jamie Cheu',
           bio: 'Along with her outreach co-chair Sam, Jamie organized the first Engineering R\'Future, an event catered to help high school women choose what engineering discipline they would like to pursue in college. Jamie is such a dedicated individual who loves outreach for engineering and her hard work has reached many young students in the IE.',
-          website: '#',
+          website: '',
           image: 'jamie.jpg',
           motm: 'October 2017'
         },
         {
           name: 'Sam Vu',
           bio: 'She is one of the co-outreach chairs for SWE, and this month she organized the first ever, Engineering R\'Future, along with her co-chair, Jamie. This event successfully taught high school women about the different engineering fields in order to prepare them for the next step in their lives. Sam is one of the sweetest people I know and she always shows up with a smile on her face.',
-          website: '#',
+          website: '',
           image: 'samvu.jpg',
           motm: 'October 2017'
         },
         {
           name: 'Pam Ycu',
           bio: 'Not only has Pam been working hard on her ME projects and volunteering for outreach events, she also organized a JPL tour for SWE and other interested engineers! She\'s always hustling through whatever life throws at her and her motivation is inspiring.',
-          website: '#',
+          website: '',
           image: 'pam.jpg'
         },
         {
           name: 'Pauleen Banzuela',
           bio: 'Pauleen has just been a great engineer, friend, and leader! She takes pride in her work and has been able to manage school, club work, and her career search all while looking like a hottie! Pauleen, as SWE\'s Team Tech Lead, has been hauling ass to get company sponsorship for the team, create a Big Ideas project and submitting the pre-proposal, and start UCR\'s first bioengineering hackathon! What can\'t she do honestly! She has been showcasing leadership while remaining positive and creating a great environment for everyone that\'s interested in joining her work. She has so many big ideas and through planned implementation, not only is she bringing UCR to the front stage among other colleges, she also promotes women in engineering to work hard and shine through! She is a great role model for other engineers and she is what I aspire to be!',
-          website: '#',
+          website: '',
           image: 'pauleen.jpg'
         },
         {
           name: 'Crysthal Alvarez',
           bio: 'Crysthal is a STEM transfer student mentor for Ms. Ruiz, aside from being an officer on the board for Window to the Brain Undergradupuate Research Club. Crysthal is a Mechanical Engineering major, and also does research under Dr. Aguilar\'s lab, working with bacteria on nano-ceramic materials. Crysthal\'s dedication to the club has helped the club grow, especially since she was part of the founding board that started the club.',
-          website: '#',
+          website: '',
           image: 'crysthal.jpg'
         },
         {
           name: 'Anthony Castellanos',
           bio: 'Through the hard work and dedication that has been put into planning events as Outreach Director, Anthony continuously demonstrates the passion he has for outreach in our community in what he does. In carrying out the mission of SHPE to empower Hispanic communities to enter STEM fields, he takes every opportunity that arises in order to push forward towards that objective. By heading Dia de Ciencias, assisting in Noche de Ciencias, and having planned several outreach and tabling events at high schools thus far, Anthony leads by example by pushing himself to meet and exceed the expectations of being outreach director. Through his strong leadership skills, he has been able to establish and maintain a reliable and hardworking committee, through which all have greatly contributed to the success of outreach in our organization.',
-          website: '#',
+          website: '',
           image: 'anthony.jpg',
           motm: 'October 2017'
         },
         {
           name: 'Steven Espinoza',
           bio: 'As a third year, he is doing well in his Mechanical Engineering classes, doing research, and has been playing a prominent role in his student organizations such as ASME and Theta Tau. He is a big personality with a big heart and wants to make everyone around him better.',
-          website: '#',
+          website: '',
           image: 'steven.jpg'
         },
         {
           name: 'Kyle Kinne',
           bio: 'Kyle, the president of SAE, has been working his butt off since freshman year and is still the hardest worker on the team. Building a formula style race car is not an easy task. Not only does Kyle posses leader ship skills, but his engineering and manufacturing skills are unmatched. Kyle is very deserving of this award for the month!',
-          website: '#',
+          website: '',
           image: 'kylek.jpg'
         },
         {
           name: 'Andrew Sanchez',
           bio: 'Constantly learning and teaching others about engineering concepts. Goes above and beyond to increase awareness of engineering and assist others in the pursit of knowledge.',
-          website: '#',
+          website: '',
           image: 'andrew.jpg'
         },
         {
           name: 'Riya Sanghvi',
           bio: 'Riya always has a cheerful and fun personality and even when she is under a lot of stress, she maintains a level-headed professional attitude. Last year, she served as academic chair she organized many successful events such as Research Networking Night. Now that she is serving professional development chair, I have no doubt that her personality will attract many personal and professional connections for SWE members. This month she has helped with organizing a trip to go to the SWE National Conference, already doubling the previous year\'s attendance numbers. It is exciting to see what she can do in a whole year. Engineer of the month? More like engineer of the year!',
-          website: '#',
+          website: '',
           image: 'riya.png'
         },
         {
           name: 'Albert Fernandez',
           bio: 'With all the changes in SHPE, Albert Zenon Fernandez has consistently stepped up to the plate, even when the event does not fall into his category. Within a week he organized the 1st General Meeting, Bourns Inc.\'s STEP Conference, and SpeedMentoring event. He is a support to the organization and a key part to this year\'s ongoing sucess.',
-          website: '#',
+          website: '',
           image: 'albert.jpg'
         },
         {
@@ -344,19 +386,19 @@ export default {
         {
           name: 'Henry Doan',
           bio: 'Senior with a cool start up',
-          website: '#',
+          website: '',
           image: 'henry.jpg'
         },
         {
           name: 'Maaz Mohamedy',
           bio: 'ACM Marketing Chair',
-          website: '#',
+          website: '',
           image: 'maaz.jpg'
         },
         {
           name: 'Neal Goyal',
           bio: 'I am currently a sophomore at the University of California, Riverside. I am majoring in computer science. I am interested in expanding my experience by seeking internships and research opportunities.',
-          website: '#',
+          website: '',
           image: 'neal.jpg'
         },
         {
@@ -381,7 +423,7 @@ export default {
           name: 'Patrick Le',
           bio:
             'I enjoy swimming',
-          website: '#',
+          website: '',
           image: 'patrick.jpg'
         },
         {
