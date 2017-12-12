@@ -17,7 +17,8 @@ Vue.use(VueAnalytics, {
 })
 Vue.use(VueLazyLoad, {
   preLoad: 1.3,
-  attempt: 1
+  attempt: 1,
+  lazyComponent: true
 })
 
 Vue.config.productionTip = false

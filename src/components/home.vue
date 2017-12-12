@@ -14,9 +14,9 @@
 
     <b-container class="h-100 mt-5">
       <b-card-group columns>
-          <div class="jcard card" v-for="p in people" :key="p.name">
+          <lazy-component class="jcard card" v-for="p in people" :key="p.name">
             <div class="img-container">
-              <img class="card-img-top" v-lazy="`static/people/${p.image}`">
+              <img class="card-img-top" :src="`static/people/${p.image}`">
               <div class="motm-badge" v-if="p.motm">Member of the Month - {{ p.motm }}</div>
             </div>
             <div class="card-body" :class="{motm : !p.motm}">
@@ -32,7 +32,7 @@
                 </p>
               </a>
             </div>
-          </div>
+          </lazy-component>
       </b-card-group>
     </b-container>
   </div>
